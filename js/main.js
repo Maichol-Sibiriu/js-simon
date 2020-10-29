@@ -24,13 +24,14 @@ $(document).ready( function() {
       while (nUser.length < fiveNumber) {
         var nUtente = parseInt( prompt("inserisci un numero a 1 a 100"));
         nUser.push(nUtente);
+
         // confronto numeri utente con numeri alert
         if (array.includes(nUtente) === true) {
           compare.push(nUtente);
         }
       }
       alert("complimenti hai indovinato " + compare.length + " numeri!!!" + " e sono :" + compare);
-    }, 3000);
+    }, 30000);
 
 
 
