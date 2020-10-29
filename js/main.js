@@ -6,21 +6,26 @@ $(document).ready( function() {
 // Una volta inseriti i 5 numeri, il software dice quanti e quali
 // numeri sono stati ricordati.
 
-
    // riferimento alert
-   var nAlert = random(10 , 20);
    var fiveNumber = 5;
    var array = [];
 
    while (array.length < fiveNumber) {
-     var nRandom =  nAlert;
+     var nRandom =  random( 10 , 20);
 
-     if (nRandom != array) {
+     if (!array.includes(nRandom)) {
        array.push(nRandom);
      }
    }
-
-    alert(array);
+   alert(array);
+   
+   // riferimento numeri utente
+   var nUser = [];
+    setTimeout( function() {
+      while (nUser.length < fiveNumber) {
+        var nUtente = parseInt( prompt("inserisci il numero.."));
+      }
+    }, 30000);
 });//FINE DOCUMENTO
 
 // funzione per generare numero random
