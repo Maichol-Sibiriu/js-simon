@@ -1,31 +1,39 @@
 // javascript
 $(document).ready( function() {
-// Un alert espone 5 numeri casuali diversi.
-// Dopo 30 secondi l'utente deve inserire, un prompt alla volta,
-// i numeri che ha visto precedentemente.
-// Una volta inseriti i 5 numeri, il software dice quanti e quali
-// numeri sono stati ricordati.
 
    // riferimento alert
    var fiveNumber = 5;
    var array = [];
 
    while (array.length < fiveNumber) {
-     var nRandom =  random( 10 , 20);
+     var nRandom =  random( 1 , 100);
 
      if (!array.includes(nRandom)) {
        array.push(nRandom);
      }
    }
    alert(array);
-   
+
    // riferimento numeri utente
    var nUser = [];
+   // riferimento confronto
+   var compare = [];
+
+   // inserimento numeri utente dopo 30 secondi
     setTimeout( function() {
       while (nUser.length < fiveNumber) {
-        var nUtente = parseInt( prompt("inserisci il numero.."));
+        var nUtente = parseInt( prompt("inserisci un numero a 1 a 100"));
+        nUser.push(nUtente);
+        // confronto numeri utente con numeri alert
+        if (array.includes(nUtente) === true) {
+          compare.push(nUtente);
+        }
       }
-    }, 30000);
+      alert("complimenti hai indovinato " + compare.length + " numeri!!!" + " e sono :" + compare);
+    }, 3000);
+
+
+
 });//FINE DOCUMENTO
 
 // funzione per generare numero random
